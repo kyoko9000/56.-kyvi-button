@@ -1,16 +1,33 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from kivy.app import App
+from kivy.uix.button import Button
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.image import Image
 
 
-# Press the green button in the gutter to run the script.
+class MainWindow(GridLayout):
+    def __init__(self):
+        super(MainWindow, self).__init__()
+        self.cols = 1
+        self.image = Image(allow_stretch=True, keep_ratio=False)
+        button = Button(text="button",
+                        font_size=50,
+                        size_hint_y=None,
+                        height=100)
+        button.bind(on_press=self.button_signal)
+        self.add_widget(self.image)
+        self.add_widget(button)
+
+    def button_signal(self, x):
+        self.image.source = "hh.jpg"
+
+
+class MyApp(App):
+    def __init__(self):
+        super().__init__()
+
+    def build(self):
+        return MainWindow()
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    MyApp().run()
