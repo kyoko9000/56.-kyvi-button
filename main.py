@@ -1,3 +1,4 @@
+# ****************kivy GUI **********************************
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
@@ -13,11 +14,11 @@ class MainWindow(GridLayout):
                         font_size=50,
                         size_hint_y=None,
                         height=100)
-        button.bind(on_press=self.button_signal)
+        button.bind(on_press=self.show_image)
         self.add_widget(self.image)
         self.add_widget(button)
 
-    def button_signal(self, x):
+    def show_image(self, x):
         self.image.source = "hh.jpg"
 
 
