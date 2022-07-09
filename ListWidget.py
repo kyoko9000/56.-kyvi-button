@@ -1,5 +1,5 @@
 # ****************kivyMD GUI **********************************
-from kivy import Config
+# from kivy import Config
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivymd.uix.button import MDRaisedButton
 from kivymd.uix.progressbar import MDProgressBar
@@ -7,9 +7,9 @@ from kivymd.uix.screen import MDScreen
 from kivymd.app import MDApp
 from kivymd.uix.textfield import MDTextField
 
-Config.set('graphics', 'width', '400')
-Config.set('graphics', 'height', '600')
-Config.write()
+# Config.set('graphics', 'width', '400')
+# Config.set('graphics', 'height', '600')
+# Config.write()
 
 
 class MainWindow(MDScreen):
